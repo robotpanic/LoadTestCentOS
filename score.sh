@@ -166,8 +166,8 @@ echo "Software section score is $score4 points"
 #     score5=$((score5+4))
 #  fi
 #done
-ssh examadmin@client 'wget https://raw.githubusercontent.com/robotpanic/LoadTestCentOS/master/datacollection.sh && chmod +x datacollection.sh && ./datacollection.sh'
-ssh examadmin@client 'wget https://raw.githubusercontent.com/robotpanic/LoadTestCentOS/master/security.sh && chmod +x security.sh && ./security.sh'
+ssh examadmin@client 'rm datacollection.sh ; wget https://raw.githubusercontent.com/robotpanic/LoadTestCentOS/master/datacollection.sh && chmod +x datacollection.sh && ./datacollection.sh'
+ssh examadmin@client 'rm security.sh ; wget https://raw.githubusercontent.com/robotpanic/LoadTestCentOS/master/security.sh && chmod +x security.sh && ./security.sh'
 examScore=$(( $score + $score1 + $score2 +$score3 + $score4))
 #echo "Data Collection section score is $score5 points"
 echo "Exam score is: $examScore"
