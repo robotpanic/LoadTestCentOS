@@ -6,4 +6,4 @@ for i in cpu_one_minute mem_swap_one_minute io_one_minute system-resources.data 
      score5=$((score5+4))
   fi
 done
-echo $score5
+echo SECURITY SCORE IS $score5
