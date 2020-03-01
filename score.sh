@@ -85,7 +85,7 @@ for i in cyrax sector; do
     score2=$((score2+2))
   fi
 done
-cat /etc/group |grep managers |gre shaokahn &> /dev/null
+cat /etc/group |grep managers |grep shaokahn &> /dev/null
 if [[ "$?" == 0 ]]; then
     score2=$((score2+2))
 fi
