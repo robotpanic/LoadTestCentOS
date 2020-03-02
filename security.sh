@@ -33,4 +33,4 @@ for i in noobsaibot scorpion; do
     score2=$((score2+2))
   fi
 done
-echo "SECURITY section score is $score2 points"
+echo "SECURITY section score is $score2"
