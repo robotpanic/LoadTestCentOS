@@ -148,11 +148,11 @@ if [[ "$countapacheconf" == "2" ]]; then
 score4=$((score4+4))
 fi
 #Bonus Points
-grep -i compress /etc/logrotate.d/httpd
+ssh client 'grep -i compress /etc/logrotate.d/httpd'
 if [[ "$?" == 0 ]]; then
     bonusScore=$((bonusScore+2))
 fi
-grep -i size /etc/logrotate.d/httpd
+ssh client 'grep -i size /etc/logrotate.d/httpd'
 if [[ "$?" == 0 ]]; then
     bonusScore=$((bonusScore+3))
 fi
