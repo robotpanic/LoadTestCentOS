@@ -30,7 +30,7 @@ fi
 for i in noobsaibot scorpion; do
   cat /etc/group |grep administrators |grep $i &> /dev/null
   if [[ "$?" == 0 ]]; then
-    score2=$((score2+2))
+    score2=$((score2+3))
   fi
 done
 echo "SECURITY section score is $score2"
