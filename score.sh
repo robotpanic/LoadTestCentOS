@@ -168,7 +168,9 @@ echo "Software section score is $score4 points"
 #done
 ssh examadmin@client 'rm datacollection.sh ; wget https://raw.githubusercontent.com/robotpanic/LoadTestCentOS/master/datacollection.sh && chmod +x datacollection.sh && ./datacollection.sh'
 ssh examadmin@client 'rm security.sh ; wget https://raw.githubusercontent.com/robotpanic/LoadTestCentOS/master/security.sh && chmod +x security.sh && ./security.sh'
-examScore=$(( $score + $score1 + $score2 +$score3 + $score4))
+DATACOLPTS=`ssh examadmin@client 'rm datacollection.sh ; wget https://raw.githubusercontent.com/robotpanic/LoadTestCentOS/master/datacollection.sh && chmod +x datacollection.sh && ./datacollection.sh' | grep DATACOLLECTION | awk '{print $NF}'`
+SECPTS=`ssh examadmin@client 'rm security.sh ; wget https://raw.githubusercontent.com/robotpanic/LoadTestCentOS/master/security.sh && chmod +x security.sh && ./security.sh' | grep SECURITY | awk {'print $NF'}`
+examScore=$(( $score + $score1 + $score2 +$score3 + $score4+$DATACOLPTS+$SECPTS))
 #echo "Data Collection section score is $score5 points"
 echo "Exam score is: $examScore"
 echo "Bonus points: $bonusScore"
