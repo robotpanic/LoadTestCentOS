@@ -46,7 +46,7 @@ if [[ "$?" == 0 ]]; then
   score1=$((score1+4))
 fi
 
-ssh -q root@client exit &> /dev/null
+sudo ssh -i /root/.ssh/id_rsa -q root@client exit &> /dev/null
 if [[ "$?" -ne 0 ]]; then
   score1=$((score1+4))
 fi
