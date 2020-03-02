@@ -11,7 +11,7 @@ if [[ "$?" == 0 ]]; then
   score2=$((score2+4))
 fi
 
-grep "%administrators ALL=(ALL) ALL" /etc/sudoers &> /dev/null
+sudo grep "%administrators ALL=(ALL) ALL" /etc/sudoers &> /dev/null
 if [[ "$?" == 0 ]]; then
   score2=$((score2+4))
 fi
