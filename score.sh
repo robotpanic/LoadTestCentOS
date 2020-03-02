@@ -133,7 +133,7 @@ echo "Storage section score is $score3 points"
 score4=0
 ssh examadmin@client "/usr/sbin/httpd -v"
 if [[ "$?" == 0 ]]; then
-    score4=$((score4+1))
+    score4=$((score4+3))
 fi
 owner=`ssh examadmin@client "getfacl -p /var/www |grep owner |cut -d : -f2 | tr -d ' '"`
 if [[ "$owner" == "apacheAdmin" ]]; then
